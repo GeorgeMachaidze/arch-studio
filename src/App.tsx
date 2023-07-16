@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import { Route, Routes } from "react-router-dom";
+import Routing from "./Routing";
 
 function App() {
   return (
     <Main>
-      <Routes>
-        <Route path="" element={"home"} />
-      </Routes>
+      <Routing />
     </Main>
   );
 }
