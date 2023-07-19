@@ -1,8 +1,10 @@
 import styled from "styled-components";
 
-const Hamburger = () => {
+const Hamburger: React.FC<{ clickHandler: () => void }> = ({
+  clickHandler,
+}) => {
   return (
-    <Svg>
+    <Svg onClick={clickHandler}>
       <g fill="#1B1D23" fillRule="evenodd">
         <path d="M0 0h24v3H0zM0 7h24v3H0zM0 14h24v3H0z" />
       </g>
