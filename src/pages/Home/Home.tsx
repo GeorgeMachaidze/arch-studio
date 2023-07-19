@@ -1,5 +1,5 @@
-import { HomeBanner } from "@/components";
-import { paramourMobaile } from "@/assets";
+import { HomeBanner, Info, Projects } from "@/components";
+import { paramourMobaile, teamMobaile } from "@/assets";
 import styled from "styled-components";
 
 const Home = () => {
@@ -17,6 +17,18 @@ const Home = () => {
           desktop: paramourMobaile,
         }}
       />
+      <Info />
+      <HomeBanner
+        title="Small team, big ideas"
+        buttonText="About Us"
+        to="/about"
+        images={{
+          mobile: teamMobaile,
+          tablet: teamMobaile,
+          desktop: teamMobaile,
+        }}
+      />
+      <Projects />
     </Main>
   );
 };

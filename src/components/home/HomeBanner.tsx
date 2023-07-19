@@ -28,7 +28,7 @@ const HomeBanner: React.FC<PropsType> = ({
   };
   return (
     <Wrapper mobile={mobile} tablet={tablet} desktop={desktop}>
-      <TextBox>
+      <TextBox description={Boolean(description)}>
         <BannerTitle>{title}</BannerTitle>
         {description ? (
           <BannerDescription>{description}</BannerDescription>
@@ -57,11 +57,18 @@ const Wrapper = styled.div(
     background-image: url(${mobile});
   `
 );
-const TextBox = styled.div`
-  width: 100%;
-  padding: 116px 32px 110px 32px;
-  background-color: rgba(0, 0, 0, 0.3499999940395355);
-`;
+
+type TextProps = {
+  description: boolean;
+};
+
+const TextBox = styled.div(
+  ({ description }: TextProps) => css`
+    width: 100%;
+    padding: ${description ? "116px 32px 110px 32px" : "181px 32px 180px 32px"};
+    background-color: rgba(0, 0, 0, 0.3499999940395355);
+  `
+);
 
 const BannerTitle = styled.h2`
   font-size: 48px;
